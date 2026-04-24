@@ -43,29 +43,37 @@ const bookStore = {
     ]
 }
 
-// selecting the header and updating the title.
+// Select the element with id 'header'
+const bookStoreTitle = document.querySelector('#header');
 
-const bookStoreTitle = document.getElementById("header");
-bookStoreTitle.textContent.bookStore.name;
+// Update the title to the bookstore name
+bookStoreTitle.textContent = bookStore.name;
 
-// looping through books while adding elements
-const bookist =document.getElementById("book-list");
 
-booksStore.books.forEach(function(book){
-    const bookContainer= document.createElement("li");
-    const bookTitle= document.createElement("h3");
-    const bookAuthor= document.createElement("p");
-    const bookImage= document.createElement("img");
-// changing the textContent of each element
-     bookTitle.textContent= book.title;
-     bookAuthor.textContent= book.author;
-     bookImage.setAttribute=("src", book.imageUrl);
- // appending book elements
-bookContainer.appendChild(bookTitle);
-bookContainer.appendChild(bookAuthor);
-bookContainer.appendChild(bookImage);
+//  Select the book list container 
+const bookList = document.querySelector('#book-list');
 
-bookList.appendChild(bookContainer);
+//  Loop through every book in the catalog
+bookStore.books.forEach(book => {
+// Create the elements
+    const bookContainer = document.createElement('li');
+    const bookTitle = document.createElement('h3');
+    const bookAuthor = document.createElement('p');
+    const bookImage = document.createElement('img');
+
+    // Change textContent and src to match the book object
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = book.author;
+    bookImage.src = book.imageUrl; 
+    bookImage.alt = book.title;     
+
+    // Append child elements to the bookContainer 
+    bookContainer.appendChild(bookTitle);
+    bookContainer.appendChild(bookAuthor);
+    bookContainer.appendChild(bookImage);
+
+    // Appending the entire bookContainer to the bookList 
+    bookList.appendChild(bookContainer);
 });
 
 
