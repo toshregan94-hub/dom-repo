@@ -44,22 +44,22 @@ const bookStore = {
 }
 
 // Select the element with id 'header'
-const bookStoreTitle = document.querySelector('#header');
+const bookStoreTitle = document.querySelector("#header");
 
 // Update the title to the bookstore name
 bookStoreTitle.textContent = bookStore.name;
 
 
 //  Select the book list container 
-const bookList = document.querySelector('#book-list');
+const bookList = document.querySelector("#book-list");
 
 //  Loop through every book in the catalog
 bookStore.books.forEach(book => {
 // Create the elements
-    const bookContainer = document.createElement('li');
-    const bookTitle = document.createElement('h3');
-    const bookAuthor = document.createElement('p');
-    const bookImage = document.createElement('img');
+    const bookContainer = document.createElement("li");
+    const bookTitle = document.createElement("h3");
+    const bookAuthor = document.createElement("p");
+    const bookImage = document.createElement("img");
 
     // Change textContent and src to match the book object
     bookTitle.textContent = book.title;
